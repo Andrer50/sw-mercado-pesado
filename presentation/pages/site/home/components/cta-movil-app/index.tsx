@@ -4,15 +4,12 @@ import { FaAppStore, FaGooglePlay } from 'react-icons/fa';
 import { HiDownload, HiSparkles } from 'react-icons/hi';
 import MovilAppShot from '@/assets/mercado-pesado-movil-shot2.png';
 import Image from 'next/image';
+import { Cable, Star } from 'lucide-react';
 
 export default function CTAMovilApp() {
 	return (
 		<section className='relative overflow-hidden bg-transparent'>
-			{/* Background decorative elements */}
-			<div className='absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.05),transparent_50%)]' />
-			<div className='absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.03),transparent_50%)]' />
-
-			<div className='relative container mx-auto px-6 lg:px-8 py-20 lg:py-28'>
+			<div className='relative container mx-auto px-6 lg:px-8 py-30 pb-44 lg:py-32 '>
 				<div className='flex justify-center items-center flex-col lg:flex-row gap-12 lg:gap-20'>
 					{/* Content Section */}
 					<ScrollReveal className='flex-1 max-w-2xl text-center lg:text-left'>
@@ -61,17 +58,27 @@ export default function CTAMovilApp() {
 
 						{/* Stats or Features */}
 						<div className='flex items-center justify-center lg:justify-start gap-8 text-sm text-white/70'>
-							<div className='flex items-center gap-2'>
-								<HiDownload className='w-4 h-4 text-primary' />
-								<span>+10k descargas</span>
+							<div className='flex flex-col sm:flex-row items-center gap-2'>
+								<div className='flex items-center gap-1'>
+									<HiDownload className='w-4 h-4 text-primary' />
+									<span>+10k</span>
+								</div>
+								<span>descargas</span>
 							</div>
-							<div className='flex items-center gap-2'>
-								<span className='w-4 h-4 text-primary'>⭐</span>
-								<span>4.8 de valoración</span>
+							<div className='flex  flex-col sm:flex-row items-center gap-2'>
+								<div className='flex items-center gap-1'>
+									<Star className='w-4 h-4 text-primary'></Star>
+									<span>4.8</span>
+								</div>
+
+								<span>valoración</span>
 							</div>
-							<div className='flex items-center gap-2'>
-								<span className='w-4 h-4 text-primary'>🔄</span>
-								<span>Actualizaciones constantes</span>
+							<div className='flex  flex-col sm:flex-row items-center gap-2'>
+								<div className='flex items-center gap-1'>
+									<Cable className='w-4 h-4 text-primary'></Cable>
+									<span>Actualizaciones</span>
+								</div>
+								<span>constantes</span>
 							</div>
 						</div>
 					</ScrollReveal>

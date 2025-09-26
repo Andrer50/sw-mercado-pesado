@@ -1,10 +1,6 @@
-import Image from 'next/image';
-import BannerHeroNav from '@/assets/banner-hero-nav.jpg';
 import SplitText from '@/components/animations/split-text/split-text';
-import { Button } from '@/components/ui/button';
 import BlurText from '@/components/animations/blur-text/blur-text';
 import { ScrollReveal } from '@/components/animations/scroll-reveal/scroll-reveal';
-import CountUp from '@/components/animations/count-up/count-up';
 import ProductsSectionSite from '@/presentation/pages/site/home/components/products-section-site/products-section-site';
 import QuestionsSection from '@/presentation/pages/site/home/components/questions-section/questions-section';
 import CTABanner from '@/presentation/pages/site/home/components/cta-banner';
@@ -52,7 +48,7 @@ export default function PrincipalPage() {
 						<ScrollReveal
 							delay={0.8}
 							direction='fade-up'>
-							<span className='px-6 py-4  text-white bg-primary rounded-2xl'>precio</span>
+							<span className='px-4 py-2  text-white bg-primary rounded-2xl'>precio</span>
 						</ScrollReveal>
 					</div>
 				</div>
@@ -129,8 +125,8 @@ export default function PrincipalPage() {
 				</div>
 				<QuestionsSection />
 			</section>
-			<section className='flex justify-center w-full mb-20'>
-				<div className='w-full px-4 md:px-0 max-w-8xl'>
+			<section className='flex justify-center w-full'>
+				<div className='w-full max-w-8xl'>
 					<CTAMovilApp />
 				</div>
 			</section>

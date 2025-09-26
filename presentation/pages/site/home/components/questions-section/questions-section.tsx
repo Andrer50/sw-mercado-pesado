@@ -1,6 +1,4 @@
 'use client';
-
-import BlurText from '@/components/animations/blur-text/blur-text';
 import { ScrollReveal } from '@/components/animations/scroll-reveal/scroll-reveal';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';

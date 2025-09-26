@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { Menu, X, MapPin, Car, Calculator, Award, Scale, Phone, Briefcase, User, FilePenLine } from 'lucide-react';
+import { Menu, X, Phone, Briefcase, User, FilePenLine } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -18,9 +18,9 @@ import { useRouter } from 'next/navigation';
 export default function NavSiteDemo(props: { className?: string }) {
 	const router = useRouter();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-
-	const services: { title: string; href: string; description: string; icon: React.ReactNode }[] = [
+	/* 	const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+	 */
+	/* const services: { title: string; href: string; description: string; icon: React.ReactNode }[] = [
 		{
 			title: 'Tarifario',
 			href: '/servicios/tarifario',
@@ -45,9 +45,9 @@ export default function NavSiteDemo(props: { className?: string }) {
 			description: 'Marco legal y normativas vigentes para revisiones técnicas.',
 			icon: <Scale className='w-4 h-4 text-orange-600' />,
 		},
-	];
+	]; */
 
-	const locales: { title: string; href: string; description: string; address: string }[] = [
+	/* const locales: { title: string; href: string; description: string; address: string }[] = [
 		{
 			title: 'Tingo María',
 			href: '/locales/tingo-maria',
@@ -60,11 +60,11 @@ export default function NavSiteDemo(props: { className?: string }) {
 			description: 'Centro de inspección técnica vehicular en Satipo.',
 			address: 'Jr. Lima 456, Satipo',
 		},
-	];
+	]; */
 
 	const toggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
-		setActiveDropdown(null);
+		/* setActiveDropdown(null); */
 	};
 
 	return (
@@ -193,7 +193,7 @@ export default function NavSiteDemo(props: { className?: string }) {
 	);
 }
 
-// Componente para servicios en desktop
+/* // Componente para servicios en desktop
 function ServiceItem({
 	title,
 	href,
@@ -236,4 +236,4 @@ function LocalItem({ title, href, description, address }: { title: string; href:
 			</a>
 		</NavigationMenuLink>
 	);
-}
+} */

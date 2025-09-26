@@ -1,14 +1,34 @@
 'use client';
 import { ScrollReveal } from '@/components/animations/scroll-reveal/scroll-reveal';
-import { Button } from '@/components/ui/button';
-import { Search, TrendingUp, Shield, Users, Star, ArrowDown, Play } from 'lucide-react';
+import { TrendingUp, Shield, Users, Star, Play } from 'lucide-react';
 import Image from 'next/image';
 import BannerHeroNav from '@/assets/banner-hero-nav.jpg';
 import BlurText from '@/components/animations/blur-text/blur-text';
 import CountUp from '@/components/animations/count-up/count-up';
 import SplitText from '@/components/animations/split-text/split-text';
 import ButtonCta from '@/components/ui/cta-button/cta-button';
+import { useEffect, useState } from 'react';
+
 export default function HeroSection() {
+	const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+	useEffect(() => {
+		const updateScreenSize = () => {
+			setIsLargeScreen(window.innerWidth >= 1024);
+		};
+
+		// Actualizar el estado al montar el componente
+		updateScreenSize();
+
+		// Escuchar cambios en el tamaño de la ventana
+		window.addEventListener('resize', updateScreenSize);
+
+		// Limpiar el evento al desmontar el componente
+		return () => {
+			window.removeEventListener('resize', updateScreenSize);
+		};
+	}, []);
+
 	return (
 		<section className='relative w-screen min-h-screen flex items-center overflow-hidden'>
 			{/* Background Image with Parallax Effect */}
@@ -42,63 +62,65 @@ export default function HeroSection() {
 								#1 Plataforma de Repuestos
 							</ScrollReveal>
 
-							{/* Main Title */}
-							<SplitText
-								tag='h1'
-								text='Mercado Pesado'
-								className='text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 gradient-text text-primary '
-								delay={100}
-								textAlign={window?.innerWidth >= 1024 ? 'start' : 'center'}
-								duration={0.4}
-								ease='power3.out'
-								splitType='chars'
-								from={{ opacity: 0, y: 80, rotateX: 90 }}
-								to={{ opacity: 1, y: 0, rotateX: 0 }}
-								threshold={0.1}
-								rootMargin='-100px'
-							/>
+							<div className='flex flex-col'>
+								{/* Main Title */}
+								<SplitText
+									tag='h1'
+									text='Mercado Pesado'
+									className='text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 gradient-text text-primary '
+									delay={100}
+									textAlign={isLargeScreen ? 'start' : 'center'}
+									duration={0.4}
+									ease='power3.out'
+									splitType='chars'
+									from={{ opacity: 0, y: 80, rotateX: 90 }}
+									to={{ opacity: 1, y: 0, rotateX: 0 }}
+									threshold={0.1}
+									rootMargin='-100px'
+								/>
 
-							{/* Subtitle */}
-							<BlurText
-								text='Encuentra las mejores ofertas de repuestos en minutos. Compara precios, calidad y tiempos de entrega de forma inteligente.'
-								delay={300}
-								animateBy='words'
-								direction='top'
-								justify={window?.innerWidth >= 1024 ? 'start' : 'center'}
-								className='text-xl md:text-2xl lg:text-3xl font-light text-white/90 leading-relaxed mb-8 max-w-3xl mx-auto lg:mx-0'
-							/>
+								{/* Subtitle */}
+								<BlurText
+									text='Encuentra las mejores ofertas de repuestos en minutos. Compara precios, calidad y tiempos de entrega de forma inteligente.'
+									delay={300}
+									animateBy='words'
+									direction='top'
+									justify={isLargeScreen ? 'start' : 'center'}
+									className='text-xl md:text-2xl lg:text-3xl font-light text-white/90 leading-relaxed mb-8 max-w-3xl mx-auto lg:mx-0'
+								/>
 
-							{/* CTA Buttons */}
-							<ScrollReveal
-								delay={0.5}
-								className='flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12'>
-								<ButtonCta text='Buscar repuestos'></ButtonCta>
+								{/* CTA Buttons */}
+								<ScrollReveal
+									delay={0.5}
+									className='flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12'>
+									<ButtonCta text='Buscar repuestos'></ButtonCta>
 
-								<button className='group flex items-center gap-3 text-white/80 hover:text-white font-medium px-6 py-4 rounded-2xl border border-white/20 hover:border-white/40 backdrop-blur-sm hover:bg-white/5 transition-all duration-300'>
-									<div className='w-10 h-10 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-colors'>
-										<Play className='w-4 h-4 ml-0.5' />
+									<button className='group flex items-center gap-3 text-white/80 hover:text-white font-medium px-6 py-4 rounded-2xl border border-white/20 hover:border-white/40 backdrop-blur-sm hover:bg-white/5 transition-all duration-300'>
+										<div className='w-10 h-10 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-colors'>
+											<Play className='w-4 h-4 ml-0.5' />
+										</div>
+										Ver cómo funciona
+									</button>
+								</ScrollReveal>
+
+								{/* Trust Indicators */}
+								<ScrollReveal
+									delay={0.7}
+									className='flex flex-wrap items-center justify-center lg:justify-start gap-6 text-lg text-white/80 mb-8'>
+									<div className='flex items-center gap-2'>
+										<Shield className='w-4 h-4 text-primary-400' />
+										<span>Transacciones seguras</span>
 									</div>
-									Ver cómo funciona
-								</button>
-							</ScrollReveal>
-
-							{/* Trust Indicators */}
-							<ScrollReveal
-								delay={0.7}
-								className='flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-white/70 mb-8'>
-								<div className='flex items-center gap-2'>
-									<Shield className='w-4 h-4 text-primary-400' />
-									<span>Transacciones seguras</span>
-								</div>
-								<div className='flex items-center gap-2'>
-									<Users className='w-4 h-4 text-primary-400' />
-									<span>+200 proveedores verificados</span>
-								</div>
-								<div className='flex items-center gap-2'>
-									<Star className='w-4 h-4 text-primary-400' />
-									<span>4.9/5 valoración</span>
-								</div>
-							</ScrollReveal>
+									<div className='flex items-center gap-2'>
+										<Users className='w-4 h-4 text-primary-400' />
+										<span>+200 proveedores verificados</span>
+									</div>
+									<div className='flex items-center gap-2'>
+										<Star className='w-4 h-4 text-primary-400' />
+										<span>4.9/5 valoración</span>
+									</div>
+								</ScrollReveal>
+							</div>
 						</div>
 
 						{/* Right Content - Stats */}

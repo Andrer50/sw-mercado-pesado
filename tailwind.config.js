@@ -1,5 +1,7 @@
+import tailwindcssAnimate from 'tailwindcss-animate';
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
 	darkMode: ['class'],
 	content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './presentation/**/*.{js,ts,jsx,tsx}'],
 	theme: {
@@ -70,7 +72,7 @@ module.exports = {
 		},
 	},
 	plugins: [
-		require('tailwindcss-animate'),
+		tailwindcssAnimate,
 		function ({ addUtilities, theme }) {
 			const textShadow = theme('textShadow');
 			const newUtilities = {};
@@ -82,3 +84,5 @@ module.exports = {
 		},
 	],
 };
+
+export default config;
