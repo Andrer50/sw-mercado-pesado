@@ -1,22 +1,19 @@
 'use client';
 import { useState } from 'react';
-import { Menu, X, ChevronDown, MapPin, Car, Calculator, Award, Scale, Phone, Briefcase, User, FilePenLine } from 'lucide-react';
+import { Menu, X, MapPin, Car, Calculator, Award, Scale, Phone, Briefcase, User, FilePenLine } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '@/assets/logo/logo-mercado-pesado-white.png';
 import {
 	NavigationMenu,
-	NavigationMenuContent,
 	NavigationMenuItem,
 	NavigationMenuLink,
 	NavigationMenuList,
-	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
-import LogoMercadoPesado from '../../../assets/svg/logo-mercado-pesado';
 
 export default function NavSiteDemo(props: { className?: string }) {
 	const router = useRouter();
@@ -78,7 +75,7 @@ export default function NavSiteDemo(props: { className?: string }) {
 
 					<Link
 						href='/'
-						className='relative flex items-center w-24 h-8 sm:w-64 sm:h-24'>
+						className='relative flex items-center w-20 h-20 sm:w-64 sm:h-24'>
 						<Image
 							fill
 							src={Logo}
@@ -131,9 +128,7 @@ export default function NavSiteDemo(props: { className?: string }) {
 								<NavigationMenuItem>
 									<NavigationMenuLink
 										asChild
-										className={cn(
-											'bg-primary-400/50 hover:bg-primary-400 text-white px-4 py-2 rounded-lg font-medium transition-colors'
-										)}>
+										className={cn('bg-primary text-white px-4 py-2 rounded-lg font-medium transition-colors')}>
 										<Button
 											onClick={() => router.push('/contacto')}
 											className='flex items-center gap-2'>
@@ -150,7 +145,7 @@ export default function NavSiteDemo(props: { className?: string }) {
 					<div className='lg:hidden'>
 						<button
 							onClick={toggleMenu}
-							className='text-neutral-700 hover:text-primary-600 focus:outline-none focus:text-primary-600 p-2'
+							className='text-white hover:text-primary-600 focus:outline-none focus:text-primary-600 p-2'
 							aria-label='Toggle menu'>
 							{isMenuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
 						</button>

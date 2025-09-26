@@ -15,7 +15,7 @@ const CardProductSite: React.FC<CardProductSiteProps> = ({ className, descriptio
 
 	return (
 		<div
-			className={`group w-full md:w-64 h-84 bg-white/5 border border-white/10 rounded-2xl text-neutral-200 p-4 flex flex-col gap-4 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-400/40 hover:bg-white/10 ${className}`}>
+			className={`group w-full h-84 bg-white/5 border border-white/10 rounded-2xl text-neutral-200 p-4 flex flex-col gap-4 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-400/40 hover:bg-white/10 ${className}`}>
 			{/* Imagen */}
 			<div className='relative w-full h-40 rounded-xl overflow-hidden'>
 				<Image

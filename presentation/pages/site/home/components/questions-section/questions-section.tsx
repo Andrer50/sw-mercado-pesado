@@ -132,27 +132,6 @@ export default function QuestionsSection() {
 	return (
 		<div className='my-5'>
 			<div className=' px-3'>
-				{/* Header */}
-				<div className='flex flex-col items-center mb-20 gap-4'>
-					<div className='flex flex-col sm:flex-row items-center gap-4'>
-						<ScrollReveal
-							delay={0.6}
-							direction='right'>
-							<span className='px-4 py-2 text-4xl md:text-5xl font-bold text-background  bg-primary rounded-sm'>
-								Preguntas
-							</span>
-						</ScrollReveal>
-						<BlurText
-							text='frecuentes'
-							delay={150}
-							animateBy='words'
-							direction='top'
-							justify='center'
-							className='text-4xl font-bold md:text-5xl text-white'
-						/>
-					</div>
-				</div>
-
 				{/* Carousel Container */}
 				<ScrollReveal
 					delay={0.3}

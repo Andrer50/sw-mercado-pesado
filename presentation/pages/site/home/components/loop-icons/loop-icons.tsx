@@ -62,7 +62,7 @@ export default function LoopIcons() {
 	}, []);
 	return (
 		<div
-			className='w-full h-[14vh] overflow-hidden relative'
+			className='w-full h-full overflow-hidden relative'
 			style={{ overflowX: 'hidden' }}>
 			<div
 				ref={scrollRef}
